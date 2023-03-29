@@ -3,6 +3,7 @@ services:
   redis-server:
     image: "redis" #What you want to use to create the redis container
   node-app: #Node app uses the docker file
+    restart: always #restart anytime our node application crashes
     build: . #use this to build the image
     ports:
       - "8081:8081" #- is how you represent an array
